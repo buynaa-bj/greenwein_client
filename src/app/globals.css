@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* ===== Theme variables ===== */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -12,24 +13,30 @@
   }
 }
 
-/* Бүх хуудсан дээр grid background */
-html, body {
+/* ===== Reset override ===== */
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* Grid background top-left эхлэлтэй */
-html {
-  background-color: var(--background);
-  background-image: linear-gradient(to right, #2b231d 1px, transparent 1px);
-  background-size: 25% 100%;      /* 4 vertical шугам */
-  background-position: top left;  /* хамгийн дээд зүүнээс эхлүүлнэ */
-  background-repeat: repeat-y;
-}
-
+/* ===== 5 BOSOO ZURAAS BACKGROUND ===== */
 body {
+  background-color: var(--background) !important;
+
+  /* 5 босоо зураас – дэлгэцийн өргөний 20% тутамд нэг босоо зураас */
+  background-image: linear-gradient(to right, #2b231d 1px, transparent 1px);
+  background-size: calc(100vw / 5) 100%; /* дэлгэцийн 20% тутамд нэг зураас */
+  background-repeat: repeat-y;
+  background-position: top left;
+  background-attachment: fixed; /* scroll хийсэн ч тогтвортой байлгах */
+
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  background: transparent; /* html дээрх background-г хаахгүй болгоно */
+}
+
+/* html-ийг цэвэрлэх */
+html {
+  background: transparent !important;
 }

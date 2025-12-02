@@ -2,15 +2,13 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <div className="bg-[#0c0c0c] relative overflow-hidden">
-
-      
-
-      {/* --- Жинхэнэ footer --- */}
-      <footer className="border-t border-[#2b231d] bg-[#090605] px-4 py-10 text-center text-xs uppercase tracking-[0.4em] text-[#9f8f7f]">
-        Menada • Wine & Lifestyle • Crafted in Bulgaria
+    <div className="bg-white relative overflow-hidden">
+      {/* --- Цэвэрхэн, дээд зэрэглэлийн footer --- */}
+      <footer className="border-t border-[#D4AF37] bg-[#F5F5F5] px-4 py-10 text-center text-xs uppercase tracking-[0.4em] text-[#1A1A1A]">
+        <span className="text-[#D4AF37] font-bold">Greenwein</span>
+        <span className="text-[#1A1A1A] mx-2">• Wine & Lifestyle •</span>
+        <span className="text-[#D4AF37]">created by ogtorgui ai</span>
       </footer>
-
     </div>
   )
 }

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const heroBottle = "/images/bottle-3.png";
 const tchergaBottle = "/images/bottle-2.png";
@@ -57,22 +58,23 @@ export const Product = () => {
       />
 
       <motion.header
-        className="mb-12 flex pl-9 items-center"
+        className="mb-12 flex flex-col sm:flex-row sm:pl-9 pl-0 items-center gap-4"
         variants={fadeUp}
         custom={0.1}
       >
-        <p className="text-xl tracking-[0.20em] text-[#D4AF37] flex items-end relative">
+        <p className="text-base sm:text-lg md:text-xl tracking-[0.20em] text-[#D4AF37] flex items-end relative w-full sm:w-auto">
           <span
-            className="rotate-180 pointer-events-none mt-5 absolute -translate-y-2 font-bold text-[0.8rem] uppercase tracking-tight text-[#D4AF37]" style={{ writingMode: "vertical-rl" }}
+            className="rotate-180 pointer-events-none mt-5 absolute -translate-y-2 font-bold text-[0.7rem] sm:text-[0.8rem] uppercase tracking-tight text-[#D4AF37] left-0"
+            style={{ writingMode: "vertical-rl" }}
           >
             Бидний
           </span>
-          <span className="ml-4 text-5xl font-bold text-[#1A1A1A]">
-          Бүтээгдэхүүнүүд
+          <span className="ml-4 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1A1A1A]">
+            Бүтээгдэхүүнүүд
           </span>
         </p>
         <motion.button
-          className="ml-auto rounded-full border border-[#D4AF37] bg-[#FFFFFF] px-6 py-4 text-[0.55rem] uppercase tracking-[0.55em] text-[#D4AF37] transition hover:bg-[#D4AF37] hover:text-[#FFFFFF] shadow-sm"
+          className="sm:ml-auto rounded-full border border-[#D4AF37] bg-[#FFFFFF] px-6 py-4 text-[0.55rem] uppercase tracking-[0.55em] text-[#D4AF37] transition hover:bg-[#D4AF37] hover:text-[#FFFFFF] shadow-sm w-full sm:w-auto"
           variants={fadeUp}
           custom={0.21}
           whileHover={{
@@ -88,7 +90,7 @@ export const Product = () => {
         </motion.button>
       </motion.header>
 
-      <div className="grid gap-6 lg:grid-cols-[1.0fr_1.0fr] mt-25 h-[1000px]">
+      <div className="grid gap-6 lg:grid-cols-[1.0fr_1.0fr] mt-10 lg:mt-25 h-auto">
         {/* Left major promoted product */}
         <motion.article
           className="relative overflow-hidden justify-between flex flex-col border border-[#D4AF37] bg-[#FFFFFF] text-[#1A1A1A] shadow-[0_30px_90px_rgba(212,175,55,0.08)]"
@@ -101,13 +103,13 @@ export const Product = () => {
             animate={{ opacity: 0.8 }}
             transition={{ duration: 1.5, delay: 0.1 }}
           />
-          <div className="relative grid gap-6 p-10 lg:grid-cols-2 ">
+          <div className="relative grid gap-6 p-4 sm:p-8 lg:p-10 lg:grid-cols-2 grid-cols-1">
             <motion.div
-              className="space-y-2 h-[800px] flex flex-col justify-between items-center text-sm uppercase tracking-[0.35em]"
+              className="space-y-2 h-auto min-h-[450px] flex flex-col justify-between items-center text-sm uppercase tracking-[0.35em]"
               variants={fadeUp}
               custom={0.10}
             >
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 items-center">
                 <motion.p
                   className="leading-tight text-[#1A1A1A]"
                   variants={fadeUp}
@@ -118,7 +120,7 @@ export const Product = () => {
                     alt="Dadova logo"
                     width={1000}
                     height={1000}
-                    className="h-[90px] w-[250px] object-cover"
+                    className="h-[60px] w-[170px] sm:h-[90px] sm:w-[250px] object-cover mx-auto"
                   />
                 </motion.p>
                 <motion.span
@@ -135,7 +137,7 @@ export const Product = () => {
                 custom={0.18}
               >
                 <motion.p
-                  className="text-[0.8rem] normal-case leading-relaxed tracking-normal text-[#1A1A1A]"
+                  className="text-[0.85rem] normal-case leading-relaxed tracking-normal text-[#1A1A1A] break-words"
                   variants={fadeUp}
                   custom={0.20}
                 >
@@ -147,8 +149,9 @@ export const Product = () => {
  Исгэлт, боловсролтыг зэвэрдэггүй ган саванд температурыг нарийн хянаж хийсэн тул сортын өөрийн төрөлхийн дүр төрх, тухайн жилийн ургацын шинэлэг төрхийг бүрэн хадгалсан.
 
                 </motion.p>
-                <motion.button
-                  className="w-max rounded-full bg-[#D4AF37] px-6 py-2 text-[0.55rem] uppercase tracking-[0.55em] text-[#FFFFFF] hover:bg-[#1A1A1A] hover:text-[#D4AF37] transition font-semibold"
+                <motion.a 
+                  href="/details" 
+                  className="w-max rounded-full bg-[#D4AF37] px-6 py-2 text-[0.55rem] uppercase tracking-[0.55em] text-[#FFFFFF] hover:bg-[#1A1A1A] hover:text-[#D4AF37] transition font-semibold flex items-center justify-center"
                   whileHover={{
                     scale: 1.07,
                     backgroundColor: "#1A1A1A",
@@ -161,17 +164,17 @@ export const Product = () => {
                   custom={0.24}
                 >
                   Дэлгэрэнгүй
-                </motion.button>
+                </motion.a>
               </motion.div>
             </motion.div>
             <motion.div
-              className="relative flex flex-col items-center "
+              className="relative flex flex-col items-center mt-6 lg:mt-0"
               initial={{ opacity: 0, scale: 0.92, x: 60 }}
               whileInView={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.18, ease: "easeOut" }}
             >
               <motion.div
-                className="absolute left-20 top-30 h-[500px] w-[500px] opacity-70"
+                className="relative h-[250px] w-[170px] sm:h-[350px] sm:w-[250px] md:h-[400px] md:w-[350px] lg:h-[500px] lg:w-[500px] opacity-70"
                 initial={{ opacity: 0, scale: 0.96, y: 30 }}
                 whileInView={{ opacity: 0.7, scale: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.22 }}
@@ -182,25 +185,25 @@ export const Product = () => {
                   width={400}
                   height={700}
                   className="h-full w-auto object-cover"
-                  style={{ maxHeight: "410px", }}
+                  style={{ maxHeight: "410px" }}
                 />
               </motion.div>
             </motion.div>
           </div>
           <motion.div
-            className="mt-1 flex flex-wrap items-center justify-between bg-[#F5F5F5] px-10 py-6 text-sm uppercase tracking-normal text-[#1A1A1A]"
+            className="mt-1 flex flex-wrap flex-col md:flex-row items-center justify-between bg-[#F5F5F5] px-4 py-4 md:px-10 md:py-6 text-sm uppercase tracking-normal text-[#1A1A1A] gap-3"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.13 }}
           >
-            <div>
-            Манай бүх бүтээгдэхүүнийг <span className="font-serif lowercase text-[#D4AF37]"> амтлаарай </span>
+            <div className="w-full md:w-auto text-center md:text-left">
+              Манай бүх бүтээгдэхүүнийг <span className="font-serif lowercase text-[#D4AF37]"> амтлаарай </span>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 justify-center w-full md:w-auto">
               {Array.from({ length: 5 }).map((_, idx) => (
                 <motion.span
                   key={`bottle-silhouette-${idx}`}
-                  className="h-14 w-4 rounded-t-[12px] bg-[#D4AF37]"
+                  className="h-8 w-3 sm:h-12 sm:w-4 rounded-t-[12px] bg-[#D4AF37]"
                   initial={{ opacity: 0, y: 22 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.21 + idx * 0.08 }}
@@ -213,7 +216,7 @@ export const Product = () => {
         {/* Two grid products animated in */}
         <div className="grid gap-6">
           <motion.article
-            className="relative grid gap-4 border border-[#D4AF37] bg-[#FFFFFF] p-8 text-[#1A1A1A] shadow-[0_25px_70px_rgba(212,175,55,0.10)] sm:grid-cols-[0.5fr_0.5fr] items-center"
+            className="relative grid gap-4 border border-[#D4AF37] bg-[#FFFFFF] p-4 sm:p-8 text-[#1A1A1A] shadow-[0_25px_70px_rgba(212,175,55,0.10)] sm:grid-cols-[0.5fr_0.5fr] items-center"
             variants={fadeUp}
             custom={0.28}
             whileHover={{ scale: 1.025, boxShadow: "0 6px 24px #D4AF3733" }}
@@ -221,7 +224,7 @@ export const Product = () => {
             transition={{ type: "spring", stiffness: 180, damping: 18 }}
           >
             <motion.div
-              className="item-center flex flex-col items-center"
+              className="flex flex-col items-center"
               variants={fadeUp}
               custom={0.32}
             >
@@ -234,7 +237,7 @@ export const Product = () => {
                 CHARDONNAY
               </motion.p>
               <motion.h3
-                className="mt-2 font-serif text-2xl text-[#1A1A1A] text-center"
+                className="mt-2 font-serif text-xl sm:text-2xl text-[#1A1A1A] text-center"
                 initial={{ opacity: 0, x: -38 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.72, delay: 0.17 }}
@@ -242,7 +245,7 @@ export const Product = () => {
                 DRY 
               </motion.h3>
               <motion.p
-                className="mt-4 text-[0.85rem] text-center leading-relaxed text-[#1A1A1A]"
+                className="mt-4 text-[0.9rem] sm:text-[0.85rem] text-center leading-relaxed text-[#1A1A1A]"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.23 }}
@@ -272,7 +275,7 @@ export const Product = () => {
               </motion.button>
             </motion.div>
             <motion.div
-              className="relative flex items-center justify-center"
+              className="relative flex items-center justify-center my-4 sm:my-0"
               initial={{ opacity: 0, x: 42 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.85, delay: 0.22 }}
@@ -288,12 +291,12 @@ export const Product = () => {
                 alt="alt"
                 width={160}
                 height={240}
-                className="relative h-48 w-auto object-contain drop-shadow-[0_30px_40px_rgba(212,175,55,0.10)]"
+                className="relative h-36 sm:h-48 w-auto object-contain drop-shadow-[0_30px_40px_rgba(212,175,55,0.10)]"
               />
             </motion.div>
           </motion.article>
           <motion.article
-            className="relative grid gap-4 border border-[#D4AF37]  bg-[#FFFFFF] p-8 text-[#1A1A1A] shadow-[0_25px_70px_rgba(212,175,55,0.10)] sm:grid-cols-[0.5fr_0.5fr] h-[600px]"
+            className="relative grid gap-4 border border-[#D4AF37] bg-[#FFFFFF] p-4 sm:p-8 text-[#1A1A1A] shadow-[0_25px_70px_rgba(212,175,55,0.10)] sm:grid-cols-[0.5fr_0.5fr] h-auto sm:h-[600px]"
             variants={fadeUp}
             custom={0.36}
             whileHover={{ scale: 1.022, boxShadow: "0 7px 30px #D4AF3733" }}
@@ -301,7 +304,7 @@ export const Product = () => {
             transition={{ type: "spring", stiffness: 185, damping: 17 }}
           >
             <motion.div
-              className="relative flex items-center justify-center"
+              className="relative flex items-center justify-center my-4 sm:my-0"
               initial={{ opacity: 0, x: -42 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.29 }}
@@ -317,7 +320,7 @@ export const Product = () => {
                 alt="alt"
                 width={160}
                 height={240}
-                className="relative h-96 w-auto object-contain drop-shadow-[0_30px_40px_rgba(212,175,55,0.10)]"
+                className="relative h-44 sm:h-96 w-auto object-contain drop-shadow-[0_30px_40px_rgba(212,175,55,0.10)]"
               />
             </motion.div>
             <motion.div
@@ -334,7 +337,7 @@ export const Product = () => {
                 RIESLING 
               </motion.p>
               <motion.h3
-                className="mt-2 font-serif text-2xl text-[#1A1A1A] text-center"
+                className="mt-2 font-serif text-xl sm:text-2xl text-[#1A1A1A] text-center"
                 initial={{ opacity: 0, x: 36 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.69, delay: 0.37 }}
@@ -342,7 +345,7 @@ export const Product = () => {
                 FEINHERB
               </motion.h3>
               <motion.p
-                className="mt-4 text-[0.85rem] leading-relaxed text-center text-[#1A1A1A]"
+                className="mt-4 text-[0.9rem] sm:text-[0.85rem] leading-relaxed text-center text-[#1A1A1A]"
                 initial={{ opacity: 0, y: 21 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.74, delay: 0.4 }}

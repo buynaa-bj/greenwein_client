@@ -105,7 +105,8 @@ export const About = () => {
         </motion.p>
         <motion.div className="mt-8 flex items-center gap-8" variants={fadeUp} custom={0.3}>
           <motion.div className="h-[2px] w-20 bg-[#D4AF37] flex-shrink-0 rounded-full" variants={fadeUp} custom={0.33} />
-          <motion.button
+          <motion.a
+          href="/abouts"
             className="text-xs uppercase tracking-[0.4em] text-[#1A1A1A] font-semibold px-6 py-2 rounded-full border border-[#D4AF37] bg-white hover:bg-[#D4AF37] hover:text-white transition-colors duration-200 shadow"
             whileHover={{
               scale: 1.07,
@@ -118,7 +119,7 @@ export const About = () => {
             custom={0.38}
           >
             Дэлгэрэнгүй
-          </motion.button>
+          </motion.a>
         </motion.div>
       </motion.div>
 
@@ -144,7 +145,8 @@ export const About = () => {
         </motion.p>
         <motion.div className="mt-8 flex items-center gap-8" variants={fadeUp} custom={0.31}>
           <motion.div className="h-[2px] w-20 bg-[#D4AF37] flex-shrink-0 rounded-full" variants={fadeUp} custom={0.35} />
-          <motion.button
+          <motion.a
+          href="/abouts"
             className="text-xs uppercase tracking-[0.4em] text-[#1A1A1A] font-semibold px-6 py-2 rounded-full border border-[#D4AF37] bg-white hover:bg-[#D4AF37] hover:text-black transition-colors duration-200 shadow"
             whileHover={{
               scale: 1.07,
@@ -157,7 +159,7 @@ export const About = () => {
             custom={0.39}
           >
             Дэлгэрэнгүй
-          </motion.button>
+          </motion.a>
         </motion.div>
       </motion.div>
     </motion.section>

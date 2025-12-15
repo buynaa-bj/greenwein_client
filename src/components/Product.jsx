@@ -73,7 +73,8 @@ export const Product = () => {
             Бүтээгдэхүүнүүд
           </span>
         </p>
-        <motion.button
+        <motion.a
+        href="/details"
           className="sm:ml-auto rounded-full border border-[#D4AF37] bg-[#FFFFFF] px-6 py-4 text-[0.55rem] uppercase tracking-[0.55em] text-[#D4AF37] transition hover:bg-[#D4AF37] hover:text-[#FFFFFF] shadow-sm w-full sm:w-auto"
           variants={fadeUp}
           custom={0.21}
@@ -87,7 +88,7 @@ export const Product = () => {
           transition={{ duration: 0.14 }}
         >
           Бүх бүтээгдэхүүнийг харах
-        </motion.button>
+        </motion.a>
       </motion.header>
 
       <div className="grid gap-6 lg:grid-cols-[1.0fr_1.0fr] mt-10 lg:mt-25 h-auto">
@@ -115,13 +116,13 @@ export const Product = () => {
                   variants={fadeUp}
                   custom={0.13}
                 >
-                  <Image
+                  {/* <Image
                     src="/images/dadova-logo.png"
                     alt="Dadova logo"
                     width={1000}
                     height={1000}
                     className="h-[60px] w-[170px] sm:h-[90px] sm:w-[250px] object-cover mx-auto"
-                  />
+                  /> */}
                 </motion.p>
                 <motion.span
                   className="text-[0.7rem] text-center text-[#D4AF37] font-bold"
@@ -174,7 +175,7 @@ export const Product = () => {
               transition={{ duration: 1.0, delay: 0.18, ease: "easeOut" }}
             >
               <motion.div
-                className="relative h-[250px] w-[170px] sm:h-[350px] sm:w-[250px] md:h-[400px] md:w-[350px] lg:h-[500px] lg:w-[500px] opacity-70"
+                className="absolute -right-70 top-40 h-[350px] w-[170px] sm:h-[450px] sm:w-[250px] md:h-[500px] md:w-[350px] lg:h-[700px] lg:w-[500px] opacity-70"
                 initial={{ opacity: 0, scale: 0.96, y: 30 }}
                 whileInView={{ opacity: 0.7, scale: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.22 }}
@@ -182,8 +183,8 @@ export const Product = () => {
                 <Image
                   src={heroBottle}
                   alt="hero bottle"
-                  width={400}
-                  height={700}
+                  width={800}
+                  height={1200}
                   className="h-full w-auto object-cover"
                   style={{ maxHeight: "410px" }}
                 />
@@ -257,7 +258,8 @@ export const Product = () => {
 Тансаг, нарийн мэдрэмжтэй дарсыг үнэлдэг хүмүүст яг тохирно.
  Оройн хоол, өдрийн төгсгөлд амрах үе, эсвэл “өнөөдөр зүгээр нэг сайн Chardonnay уумаар байна” гэж санагдсан ямар ч мөчид таарна.
               </motion.p>
-              <motion.button
+              <motion.a
+              href="/details"
                 className="w-max rounded-full mt-2 bg-[#D4AF37] px-6 py-2 text-[0.55rem] uppercase tracking-[0.55em] text-[#FFFFFF] hover:bg-[#1A1A1A] hover:text-[#D4AF37] transition font-semibold"
                 whileHover={{
                   scale: 1.07,
@@ -272,7 +274,7 @@ export const Product = () => {
                 viewport={{ once: true }}
               >
                 Дэлгэрэнгүй
-              </motion.button>
+              </motion.a>
             </motion.div>
             <motion.div
               className="relative flex items-center justify-center my-4 sm:my-0"
@@ -356,7 +358,8 @@ export const Product = () => {
 Зуны зөөлөн орой, гэнэтийн оройн зоог, эсвэл зүгээр л сайхан өдрүүдэд —энэ Рислинг хамгийн төгс хамтрагч болно.
 
               </motion.p>
-              <motion.button
+              <motion.a
+              href="/details"
                 className="w-max rounded-full mt-2 bg-[#D4AF37] px-6 py-2 text-[0.55rem] uppercase tracking-[0.55em] text-[#FFFFFF] hover:bg-[#1A1A1A] hover:text-[#D4AF37] transition font-semibold"
                 whileHover={{
                   scale: 1.07,
@@ -371,7 +374,7 @@ export const Product = () => {
                 viewport={{ once: true }}
               >
                 Дэлгэрэнгүй
-              </motion.button>
+              </motion.a>
             </motion.div>
           </motion.article>
         </div>

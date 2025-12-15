@@ -1,9 +1,13 @@
 "use client";
 
 import React, { useState } from 'react';
+import { useCartDrawer } from '@/context/CartDrawerContext';
+import { useCart } from '@/context/CartContext';
 
 export const Header = () => {
   const [showModel, setShowModel] = useState(false);
+  const { openDrawer } = useCartDrawer();
+  const { cartItems } = useCart();
 
   const leftMenu = [
     {
@@ -74,12 +78,15 @@ export const Header = () => {
         <header className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 lg:px-0">
           <div className="flex items-center justify-between">
             <div className="flex flex-col items-center">
-              <h1 className="font-black text-2xl md:text-3xl uppercase text-[#D4AF37]">
+              <a href='./'>
+                <h1 className="font-black text-2xl md:text-3xl uppercase text-[#D4AF37]">
                 Green wein
               </h1>
+              
               <p className="text-xs tracking-[0.5em] text-[#D4AF37]">
                 Wine & Lifestyle
               </p>
+              </a>
             </div>
             <nav className="flex gap-4 md:gap-8 text-sm uppercase tracking-[0.3em] text-[#D4AF37]">
               <button
@@ -88,6 +95,17 @@ export const Header = () => {
               >
                 MENU
               </button>
+              <button
+              className="relative flex items-center gap-2 text-orange-500 font-semibold px-3 py-2 md:px-6 md:py-2 rounded-full shadow-lg border-2 border-orange-300 text-xs md:text-base"
+              onClick={openDrawer}
+            >
+              Сагс
+              {cartItems.length > 0 && (
+                <span className="absolute -top-2 -right-2 flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-tr from-orange-500 to-yellow-400 shadow-lg border-2 border-white text-white text-xs font-bold animate-bounce z-10">
+                  {cartItems.length}
+                </span>
+              )}
+            </button>
             </nav>
           </div>
         </header>

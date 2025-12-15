@@ -87,9 +87,9 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          <div className="absolute mx-auto top-[-48vh] flex w-[35vw] -left-49 justify-center ">
+          <div className="absolute mx-auto top-[-63vh] flex w-[27vw] -left-15 justify-center ">
             <Image
-              src="/images/graoe-2.png"
+              src="/images/grape-3.png"
               alt="Menada grapes"
               width={2000}
               height={2940}
@@ -184,7 +184,8 @@ export const Hero = () => {
               <p className="text-xs sm:text-sm leading-relaxed min-h-[36px] text-[#1A1A1A]">
                 {active.info}
               </p>
-              <fmMotion.button
+              <fmMotion.a
+              href="/details"
                 whileTap={{ scale: 0.96 }}
                 whileHover={{
                   backgroundColor: "#D4AF37",
@@ -195,7 +196,7 @@ export const Hero = () => {
                 className="w-max rounded-full border border-[#D4AF37] bg-white px-4 sm:px-6 py-2 text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] text-[#1A1A1A] font-semibold shadow-2xl mt-2 transition-colors hover:bg-[#D4AF37] hover:text-white"
               >
                 Дэлгэрэнгүй
-              </fmMotion.button>
+              </fmMotion.a>
             </fmMotion.div>
           </FMAnimatePresence>
         </fmMotion.div>

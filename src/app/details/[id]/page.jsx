@@ -17,7 +17,7 @@ export default function ProductDetailPage() {
   // Fetch all products
   useEffect(() => {
     axios
-      .get("http://localhost:8888/api/v1/product")
+      .get("https://greenwein-api.vercel.app/api/v1/product")
       .then((res) => {
         setOtherProducts(res.data.data || []);
       })
@@ -172,7 +172,7 @@ export default function ProductDetailPage() {
           <span className="absolute top-4 left-7 w-3 h-3 rounded-full bg-[#D4AF37] shadow-lg border-2 border-white" />
           {/* Bottle Image */}
           <img
-            src={`http://localhost:8888/uploads/${product.image}`}
+            src={`https://greenwein-api.vercel.app/uploads/${product.image}`}
             alt={product.name}
             draggable={false}
             className="h-[430px] md:h-[580px] object-contain z-10 drop-shadow-[0_8px_26px_#D4AF374d] mt-16 select-none"
@@ -358,7 +358,7 @@ export default function ProductDetailPage() {
                     style={{ minHeight: "220px" }}
                   >
                     <img
-                      src={`http://localhost:8888/uploads/${op.image}`}
+                      src={`https://greenwein-api.vercel.app/uploads/${op.image}`}
                       alt={op.name}
                       className="max-h-56 object-contain drop-shadow-[0_8px_16px_#D4AF371a] transition-transform group-hover:scale-105 duration-150"
                       draggable={false}

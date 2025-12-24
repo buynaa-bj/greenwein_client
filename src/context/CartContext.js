@@ -49,7 +49,7 @@ export function CartProvider({ children }) {
         : product.image
         ? [
             // API static upload base-тай нийцүүлэх
-            `https://localhost:8888/uploads/${product.image}`,
+            `https://greenwein-api.vercel.app/uploads/${product.image}`,
           ]
         : [];
 

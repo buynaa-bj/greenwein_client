@@ -46,7 +46,7 @@ export default function DetailsPage() {
 
   const fetchData = () => {
     axios
-      .get("http://localhost:8888/api/v1/product")
+      .get("https://greenwein-api.vercel.app/api/v1/product")
       .then((res) => {
         // дата-г хамгийн сүүлд нэмэгдсэн нь эхэнд гаргах (reverse)
         setDatas(res.data.data.slice().reverse());
@@ -181,7 +181,7 @@ export default function DetailsPage() {
                   animate="rest"
                 >
                   <motion.img
-                    src={`http://localhost:8888/uploads/${p.image}`}
+                    src={`https://greenwein-api.vercel.app/uploads/${p.image}`}
                     alt={p.name}
                     className="max-h-36 md:max-h-56 w-auto mx-auto object-contain drop-shadow-[0_8px_18px_#D4AF3723] transition-transform duration-300 group-hover:scale-105"
                     draggable={false}

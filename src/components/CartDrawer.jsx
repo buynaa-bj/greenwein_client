@@ -62,9 +62,14 @@ export const CartDrawer = () => {
       closable
       onClose={closeDrawer}
       open={isDrawerOpen}
-      width={400}
+      size="default"
       className="cart-drawer"
-      bodyStyle={{ background: "#FFFFFF", padding: 0 }}
+      styles={{
+        body: {
+          background: "#FFFFFF",
+          padding: 0,
+        },
+      }}
     >
       {!showOrderForm ? (
         cartItems.length === 0 ? (
@@ -88,7 +93,7 @@ export const CartDrawer = () => {
                     {/* Product Image */}
                     <div className="w-16 h-16 flex-shrink-0 rounded-lg overflow-hidden bg-white border border-[#F5F5F5]">
                       <img
-                        src={`http://localhost:8888/uploads/${item.image}`}
+                        src={`https://greenwein-api.vercel.app/uploads/${item.image}`}
                         alt={item.name}
                         className="w-full h-full object-cover"
                       />
